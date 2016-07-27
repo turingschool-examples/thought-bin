@@ -1,0 +1,29 @@
+<%= form_for(@inspiration) do |f| %>
+  <% if @inspiration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inspiration.errors.count, "error") %> prohibited this inspiration from being saved:</h2>
+
+      <ul>
+      <% @inspiration.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :link %><br>
+    <%= f.text_field :link %>
+  </div>
+  <div class="field">
+    <%= f.label :inspired %><br>
+    <%= f.check_box :inspired %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
