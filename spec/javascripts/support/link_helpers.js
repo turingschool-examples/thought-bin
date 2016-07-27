@@ -14,9 +14,10 @@ function createPopulatedLinks(){
   return links;
 }
 
-function createLink(name, id){
+function createLink(name, id, readStatus){
   var link = document.createElement('div');
   link.id = id;
+  link.className = readStatus || 'unread';
   var a = document.createElement('a');
   var linkText = document.createTextNode(name);
   a.appendChild(linkText);
